@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Site Touristique</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="sendmail.css">
+</head>
+<body>
+    <header>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <div class="navbar">
+            <div class="logo"><a href="#">Tourisme</a></div>
+            <ul class="links">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            </ul>
+            <a href="sendmail.html" class="action_btn">Feedback</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="drop_menu">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li> <a href="sendmail.html" class="action_btn">Feedback</a></li>
+        </div>
+    </header>
+  <p>Contact Us </p>
+   <div class="container">
+  <form onsubmit="return false">
+     <div class="form-items">
+         <input type="text" name="name" placeholder="Name" required>
+     </div>
+      <div class="form-items">
+         <input type="text" name="phone" placeholder="Phone" required>
+     </div>
+      <div class="form-items">
+         <input type="email" name="email" placeholder="Email" required>
+     </div>
+      <div class="form-items">
+        <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea> 
+     </div>
+     <button>Send email</button>
+  </form>
+   </div>
+   <script src="script.js"></script>
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+   <!-- icon-->
+   <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const DropMenu = document.querySelector('.drop_menu')
+
+    toggleBtn.onclick=function(){
+        DropMenu.classList.toggle('open')
+        const isOpen = DropMenu.classList.contains('open')
+        toggleBtnIcon.classList=isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+</script>
+
+  <!-- scroll-->
+<script type="text/javascript">
+    /*     window.addEventListener('scroll',function(){
+              const header=document.querySelector('header');
+              header.classList.toggle("sticky",window.scrollY > 0);
+         });*/
+         function toggleMenu(){
+            const menuToggle = document.querySelector('.menuToggle');
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+     </script> 
+</body>
+</html>

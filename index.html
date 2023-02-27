@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Site Touristique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <div class="navbar">
+            <div class="logo"><a href="#">Tourisme</a></div>
+            <ul class="links">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            </ul>
+            <a href="sendmail.html" class="action_btn">Feedback</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="drop_menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li> <a href="sendmail.html" class="action_btn">Feedback</a></li>
+        </div>
+    </header> 
+    
+    <div class="slider" id="home">
+        <div class="slider-items">
+            <div class="item active">
+             <img src="image/hu.jpg"/>
+               <div class="caption">
+                Image 1
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/blog-1.jpg"/>
+                  <div class="caption">
+                   Image 2
+                   </div>
+               </div>
+               <div class="item">
+                <img src="image/blog-2.jpg"/>
+                  <div class="caption">
+                   Image 3
+                   </div>
+               </div>
+        </div>
+        <!-- slider controls -->
+<div class="left-slide"><</div>
+<div class="right-slide">></div>
+<!-- slider controls -->
+<div class="sign">
+ <p>Tourism Management System</p>
+ <div class="signup">
+    <a href="signup.html" class="up">SignUp</a>
+    <a href="signin.html" class="in">SignIn</a>
+ </div>
+</div>
+
+    </div>
+
+     <!-- section 2-->
+     <div class="section" id="destination">
+        <div class="popular">
+            <p>Popular Destination</p>
+            <div class="line"></div>
+        </div>
+        <div class="image-flex">
+            <div class="image">
+                <img src="image/blog-4.jpg" alt="">
+                <div class="pa">
+                    <p>Nosy be</p>
+                    <a href="#" class="visit">visit</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="image/blog-5.jpg" alt="">
+                <div class="pa">
+                <p>Fort Dauphin</p>
+                <a href="#" class="visit">visit</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="image/blog-6.jpg" alt="">
+                <div class="pa">
+                <p>Nosy Lava</p>
+                <a href="#" class="visit">visit</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="image/blog-3.jpg" alt="">
+                <div class="pa">
+                    <p>Ankarafantsika</p>
+                    <a href="#" class="visit">visit</a>
+                </div>
+            </div>
+        </div>      
+     </div>
+
+     <!-- about-->
+     <div class="about">
+        <div class="about-div">
+            <p>Abouts Us</p>
+        </div>
+        <div class="facebook">
+            <i class="fa-solid fa-home"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="contact">
+           <p> <span>Name:</span> RAHERINIANA</p>
+           <p><span>First Name:</span> Georges Aimé Stephan</p>
+           <p><span>Contact:</span> +261 32 69 121 32 </p>
+           <p><span>Email:</span> stephangeorges@gmail.com</p>
+        </div>
+     </div>
+    <!-- icon-->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const DropMenu = document.querySelector('.drop_menu')
+
+        toggleBtn.onclick=function(){
+            DropMenu.classList.toggle('open')
+            const isOpen = DropMenu.classList.contains('open')
+            toggleBtnIcon.classList=isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+    <!-- slider next-->
+    <script>
+var slides = document.querySelector('.slider-items').children;
+var nextSlide = document.querySelector(".right-slide");
+var prevSlide = document.querySelector(".left-slide");
+var totalSlides = slides.length;
+var index=0;
+
+nextSlide.onclick =function () {
+    next("next");
+}
+prevSlide.onclick =function () {
+    next("prev");
+}
+function next(direction){
+    if(direction=="next"){
+        index++;
+        if(index==totalSlides){
+            index=0;
+        }
+    }else{
+        if(index==0){
+            index=totalSlides-1;
+        }else{
+            index--;
+        }
+    }
+    for(i=0; i<slides.length; i++){
+    slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active");
+}
+    </script>
+    <!-- scroll-->
+    <script type="text/javascript">
+   /*     window.addEventListener('scroll',function(){
+             const header=document.querySelector('header');
+             header.classList.toggle("sticky",window.scrollY > 0);
+        });*/
+        function toggleMenu(){
+           const menuToggle = document.querySelector('.menuToggle');
+           const nav = document.querySelector('.navbar');
+           nav.classList.toggle('active');
+           menuToggle.classList.toggle('active');
+       }
+    </script> 
+</body>
+</html>

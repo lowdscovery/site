@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <img src="image2/orf.jpg" alt="">
+    <header>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <div class="navbar">
+            <div class="logo"><a href="#">Tourisme</a></div>
+            <ul class="links">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            </ul>
+            <a href="sendmail.html" class="action_btn">Feedback</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="drop_menu">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#destination" onclick="toggleMenu();">Destination</a></li>
+            <li><a href="Services">Gallery</a></li>
+            <li><a href="signup.html">Sign up</a></li>
+            <li> <a href="sendmail.html" class="action_btn">Feedback</a></li>
+        </div>
+    </header>
+<div class="row">
+<div class="row1">
+    <p>Sign In</p>
+    <div class="line"></div>
+    <div class="row2">
+        <input type="text" name="" id="" placeholder="Username">
+    </div>
+    <div class="row2">
+        <input type="password" name="" id="" placeholder="Password">
+    </div>
+    <div class="row2">
+        <input type="submit" value="SignIn">
+    </div> 
+</div>
+</div>
+     <!-- icon-->
+     <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const DropMenu = document.querySelector('.drop_menu')
+
+        toggleBtn.onclick=function(){
+            DropMenu.classList.toggle('open')
+            const isOpen = DropMenu.classList.contains('open')
+            toggleBtnIcon.classList=isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+      /*  window.addEventListener('scroll',function(){
+             const header=document.querySelector('header');
+             header.classList.toggle("sticky",window.scrollY > 0);
+        });*/
+        function toggleMenu(){
+           const menuToggle = document.querySelector('.menuToggle');
+           const nav = document.querySelector('.navbar');
+           nav.classList.toggle('active');
+           menuToggle.classList.toggle('active');
+       }
+    </script> 
+</body>
+</html>
