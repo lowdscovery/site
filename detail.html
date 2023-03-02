@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="signup.css">
-    <title>Sign In</title>
+    <link rel="stylesheet" href="detail.css">
+    <title>Details Destination</title>
 </head>
 <body>
-    <img src="image2/orf.jpg" alt="">
     <header>
         <div class="menuToggle" onclick="toggleMenu();"></div>
         <div class="navbar">
@@ -34,23 +33,27 @@
             <li> <a href="sendmail.html" class="action_btn">Feedback</a></li>
         </div>
     </header>
-<div class="row">
-<div class="row1">
-    <p>Sign In</p>
-    <div class="line"></div>
-    <div class="row2">
-        <input type="text" name="" id="" placeholder="Username">
+    <div class="detail">
+        <div class="detail1">
+            <img src="fort/fo.jpg" alt="">
+        </div>
+        <div class="paragraphe">
+            <p>
+                Le magasin xxxxxxxxx a été crée il y a plus de 12 ans. Depuis plus de 6 ans déjà, ce
+                magasin s est dote d un site internet qui a été mis a jour plusieurs fois, soit
+                graphiquement, soit dans sa construction. Les résultats financiers ou qualitatifs n
+                étant pas toujours conformes aux importants investissements réalisés, le magasin
+                xxxxxx a ainsi eu a changer un certain nombre de fois de prestataires et pour la
+                création ou gestion de son site et pour sa promotion (référencement, publicité etc.).
+                L ́objectif de ce cahier des charges est de tenter, une dernière fois, de relancer ce
+                site qui après des débuts encourageants et une coopération de plus de 2 ans avec l
+                actuel prestataire se retrouve aujourd’hui face a une impasse avec un nombre de
+                visites et d achats en forte baisse</p>
+        </div>
     </div>
-    <div class="row2">
-        <input type="password" name="" id="" placeholder="Password">
-    </div>
-    <div class="row2">
-        <input type="submit" value="SignIn">
-    </div> 
-</div>
-</div>
-     <!-- icon-->
-     <script>
+
+       <!-- icon-->
+       <script>
         const toggleBtn = document.querySelector('.toggle_btn')
         const toggleBtnIcon = document.querySelector('.toggle_btn i')
         const DropMenu = document.querySelector('.drop_menu')
@@ -63,7 +66,8 @@
             : 'fa-solid fa-bars'
         }
     </script>
-    <script type="text/javascript">
+
+       <script type="text/javascript">
       /*  window.addEventListener('scroll',function(){
              const header=document.querySelector('header');
              header.classList.toggle("sticky",window.scrollY > 0);

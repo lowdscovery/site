@@ -229,8 +229,15 @@ font-weight: bold;
     margin: 0 auto;
     padding: 10px 10px;
 }
+
 .image img{
     width: 100%;
+    height: 200px;
+    cursor: pointer;
+    transition: .6s;
+}
+.image img:hover,.image p:hover{
+   transform:scale(1.1);
 }
 .section .image .pa{
     align-items: center;
@@ -250,10 +257,6 @@ font-weight: bold;
     padding: 5px 10px;
     border: 1px solid white;
     transition: all 1s;
-}
-.pa p:hover{
-    transform: translateY(-100px);
-    cursor: pointer;
 }
 /*about*/
 .about{
